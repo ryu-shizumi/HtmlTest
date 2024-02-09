@@ -1,0 +1,245 @@
+<html>
+<head>
+
+    <style>
+        /* 要素全体を中央に配置する土台 */
+        .base{
+            width: 600px;
+            margin: 0 auto;
+            /*
+            border: 2px solid black;
+            */
+        }
+        /* 各パートの土台 */
+        .part_base
+        {
+            width: 100%;
+            border: 2px solid rgb(117, 10, 10);
+        }
+        /* 各パートのタイトル部 */
+        .part_title{
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(to right, blue, aqua);
+            color: white;
+            font-size: x-large;
+            text-indent: 10px;
+        }
+        /* 解説 */
+        .description{
+            padding-left: 10px;
+        }
+        #img_ikesu{
+            height: 300px;
+        }
+        /* div「駐車場」 */
+        #div_parking{
+            /* 子要素の座標指定を絶対座標にする */
+            position: relative; 
+        }
+        /* 「駐車場」画像 */
+        #img_parking{
+            height: 300;
+        }
+
+        /* 「無料」画像 */
+        #img_free{
+            position:absolute;
+            height: 130;
+            left:0;
+            top:60;
+        }
+        /* div「所在地」 */
+        #div_address{
+            /* 子要素の座標指定を絶対座標にする */
+            position: relative; 
+        }
+        
+        /* 「所在地」画像 */
+        #img_address{
+            height: 300;
+        }
+
+        /* 「入荷情報」画像 */
+        #img_fishman{
+            height: 300;
+        }
+
+        /* div「入荷情報」 */
+        #div_instagram{
+            /* 子要素の座標指定を絶対座標にする */
+            position: relative; 
+        }
+        /* ボタンのベース */
+        .button_base{
+            /* 子要素の座標指定を絶対座標にする */
+            position: relative; 
+            bottom: 10;
+            right: 0;
+        }
+        /* クリック可能ボタンの基本設定 */
+        .clickable_button{
+            border: 5px solid white;
+            border-radius: 20px;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            box-shadow: 5px 5px 10px gray;
+
+            right:10;
+            bottom: 10;
+        }
+        /* マップボタンのベース */
+        #div_map_button_base{
+            position:absolute;
+            right: 10;
+        }
+        /* GoogleMapボタン */
+        #div_googlemap_button{
+            background-color: green;
+        }
+        /* AppleMapボタン */
+        #div_applemap_button{
+            background-color: black;
+        }
+
+        /* div「インスタグラム」ボタン */
+        #div_instagram_button {
+            position:absolute;
+            /* グラデ、境界線アリ、角丸、中央揃え */
+            background: linear-gradient(to right, purple, orange, red);
+        }
+        /* インスタグラムのボタンの中身 */
+        #div_button_inner{
+            display: flex;
+            align-items: center;
+        }
+        /* Telボタン */
+        #div_tel_button{
+            position:absolute;
+            background-color: blue;
+        }
+        #img_instagram_icon{
+            height: 40;
+        }
+        /* aタグに下線を表示しない */
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .copyright{
+            display: block;
+            text-align: center;
+        }
+        #img_kanban{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="base">
+        <img id="img_kanban" src="./img/kanban-02.jpg"><br><br>
+        <div class="part_base" id="div_about">
+            <span class="part_title">会社概要</span><br>
+            <div class="description">
+                かいしゃがいよう。
+            </div><br>
+            <img id="img_ikesu" src="./img/fish_ikesu.png">
+        </div>
+        <br>
+        <div class="part_base" id="div_hours">
+            <span class="part_title">営業時間</span>
+            <br>
+            <div class="description">
+                <table border="0">
+                    <tr>
+                    <td>平日</td>
+                    <td>9:00～15:00</td>
+                    </tr>
+                    <tr>
+                    <td>土曜・祝日</td>
+                    <td>9:00～15:00</td>
+                    </tr>
+                    <tr>
+                    <td>定休日</td>
+                    <td>日曜日（※２０２３年６月より）</td>
+                    </tr>
+                    <tr>
+                    <td>休業日</td>
+                    <td>１月１日元旦</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="part_base" id="div_parking">
+            <span class="part_title">駐車場</span><br>
+            <div class="description">
+                無料１００台
+            </div>
+            <img id="img_parking" src="./img/car_parking_p.png">
+            <img id="img_free" src="./img/mark_money_muryou.png">
+        </div>
+        <br>
+        <div class="part_base" id="div_address">
+            <span class="part_title">住所</span><br>
+            <div class="description">
+                〒544-8501 大阪府大阪市生野区勝山南３丁目１−１９
+            </div>
+            <img id="img_address" src="./img/smartphone_map_app_man_rev.png">
+            
+            <div id="div_map_button_base" class="button_base">
+                <div id="div_googlemap_button" class="clickable_button">
+                    <a href="https://maps.app.goo.gl/P5b2qV5u62PpudKeA" target="_blank">Googleマップで開く</a>
+                </div>
+                <br>
+                <div id="div_applemap_button" class="clickable_button">
+                    <a href="maps://?q=大阪市+生野区役所" target="_blank">Appleマップで開く</a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="part_base" id="div_instagram">
+            <span class="part_title">入荷情報</span><br>
+            <div class="description">
+                インスタグラムで日々更新中！
+            </div>
+            <img id="img_fishman" src="./img/fishing_fish_man.png">
+            <div class="button_base">
+                <div id="div_instagram_button" class="clickable_button">
+                    <a href="https://www.instagram.com/ryu_sizumi/" target="_blank">
+                        <div id="div_button_inner">
+                            <img id="img_instagram_icon" src="./img/Instagram_Glyph_White.png">
+                            　ryu_sizumi
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="part_base" id="div_instagram">
+            <span class="part_title">連絡先</span><br>
+            <div class="description">
+                TEL：06-xxxx-xxxx<br>
+                FAX：06-xxxx-xxxx<br>
+                メール:xxxx@gmail.com<br>
+                <br>
+            </div>
+            <div class="button_base">
+                <div id="div_tel_button" class="clickable_button">
+                    <a href="tel:117">
+                        <div id="div_button_inner">
+                            ☎　電話する　
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <span class="copyright">© シズミン</span>
+    </div>
+</body>
+
+</html>
